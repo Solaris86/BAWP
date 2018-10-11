@@ -4,4 +4,8 @@
     <string name="login_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="login_title_button">Login</string>
+    <string name="create_act_text">Create Account</string>
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
+    <string name="create_act_button_title">Create Account</string>
 </resources>
