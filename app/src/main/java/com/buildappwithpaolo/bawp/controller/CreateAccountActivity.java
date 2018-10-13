@@ -1,7 +1,9 @@
-package com.buildappwithpaolo.bawp;
+package com.buildappwithpaolo.bawp.controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.buildappwithpaolo.bawp.R;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
