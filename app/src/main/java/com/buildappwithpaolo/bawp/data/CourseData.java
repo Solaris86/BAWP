@@ -10,7 +10,7 @@ public class CourseData {
     public ArrayList<Course> courseList() {
         ArrayList<Course> list = new ArrayList<>();
         for (int i = 0; i < courseNames.length; i++) {
-            Course course = new Course(courseNames[i], courseNames[i].replace("\\s+", "").toLowerCase(), "happy_woman");
+            Course course = new Course(courseNames[i], courseNames[i].replace(" ", "").toLowerCase(), "happy_woman");
             list.add(course);
         }
         return list;
