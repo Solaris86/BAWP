@@ -20,7 +20,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".controller.CreateAccountActivity" />
-        <activity android:name=".controller.DashboardActivity"></activity>
+        <activity android:name=".controller.DashboardActivity" />
+        <activity
+            android:name=".controller.DetailsActivity"
+            android:label="@string/title_activity_details"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

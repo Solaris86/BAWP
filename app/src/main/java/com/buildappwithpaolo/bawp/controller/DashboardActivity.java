@@ -1,5 +1,7 @@
 package com.buildappwithpaolo.bawp.controller;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -34,9 +36,15 @@ public class DashboardActivity extends AppCompatActivity {
         adapter.setOnClickListener(new CourseListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(DashboardActivity.this, "Clicked: " + position, Toast.LENGTH_SHORT).show();
+                startActivity(newIntent(DashboardActivity.this, position));
             }
         });
+    }
+
+    public Intent newIntent(Context context, int position) {
+        Intent intent = new Intent(context, DetailsActivity.class);
+        intent.putExtra("course_id", position);
+        return intent;
     }
 
     @Override
