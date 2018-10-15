@@ -1,5 +1,6 @@
 package com.buildappwithpaolo.bawp.data;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -27,10 +28,15 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull CourseListAdapter.ViewHolder viewHolder, int i) {
+        final Context context = viewHolder.courseImageView.getContext();
         Course course = courseData.courseList().get(i);
         viewHolder.courseTitle.setText(course.getCourseName());
-        Picasso.with(viewHolder.courseTitle.getContext()).load(course.getImageResourceId(viewHolder.courseTitle.getContext())).into(viewHolder.courseImageView);
-        Picasso.with(viewHolder.courseTitle.getContext()).load(course.getImageResourceId(viewHolder.courseTitle.getContext())).into(viewHolder.authorImageView);
+        Picasso.with(context)
+                .load(course.getImageResourceId(context))
+                .into(viewHolder.courseImageView);
+        Picasso.with(viewHolder.courseTitle.getContext())
+                .load(course.getImageResourceId(context))
+                .into(viewHolder.authorImageView);
     }
 
     @Override
@@ -49,9 +55,9 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            courseTitle = itemView.findViewById(R.id.courseTitleId);
-            courseImageView = itemView.findViewById(R.id.courseImageId);
-            authorImageView = itemView.findViewById(R.id.authorImageID);
+            courseTitle = (TextView) itemView.findViewById(R.id.courseTitleId);
+            courseImageView = (ImageView) itemView.findViewById(R.id.courseImageId);
+            authorImageView = (ImageView) itemView.findViewById(R.id.authorImageID);
 
             itemView.setOnClickListener(this);
         }
